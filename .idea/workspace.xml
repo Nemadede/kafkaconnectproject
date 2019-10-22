@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1486a231-a3c5-4666-b7fb-f7799af020a1" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+    <option name="enabledProfiles">
+      <list>
+        <option value="maven-central" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1SELu0ZVNMMG0LOHavZFOxzTTL9" />
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.MySourceTaskTest.test">
+    <configuration name="MySourceConnectorConfigTest.canReadConfigCorrectly" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kafka-connectProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nema.kafka.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.nema.kafka" />
+      <option name="MAIN_CLASS_NAME" value="com.nema.kafka.MySourceConnectorConfigTest" />
+      <option name="METHOD_NAME" value="canReadConfigCorrectly" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MySourceConnectorTest.taskConfigsShouldReturnOneTaskConfig" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kafka-connectProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nema.kafka.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.nema.kafka" />
+      <option name="MAIN_CLASS_NAME" value="com.nema.kafka.MySourceConnectorTest" />
+      <option name="METHOD_NAME" value="taskConfigsShouldReturnOneTaskConfig" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MySourceConnectorTest.taskReturn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kafka-connectProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nema.kafka.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.nema.kafka" />
+      <option name="MAIN_CLASS_NAME" value="com.nema.kafka.MySourceConnectorTest" />
+      <option name="METHOD_NAME" value="taskReturn" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MySourceTaskTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kafka-connectProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nema.kafka.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.nema.kafka" />
+      <option name="MAIN_CLASS_NAME" value="com.nema.kafka.MySourceTaskTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MySourceTaskTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kafka-connectProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nema.kafka.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.nema.kafka" />
+      <option name="MAIN_CLASS_NAME" value="com.nema.kafka.MySourceTaskTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.nema.kafka in kafka-connectProject" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="kafka-connectProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nema.kafka.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.nema.kafka" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MySourceTaskTest.test" />
+        <item itemvalue="JUnit.MySourceTaskTest" />
+        <item itemvalue="JUnit.MySourceConnectorTest.taskReturn" />
+        <item itemvalue="JUnit.MySourceConnectorTest.taskConfigsShouldReturnOneTaskConfig" />
+        <item itemvalue="JUnit.MySourceConnectorConfigTest.canReadConfigCorrectly" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1486a231-a3c5-4666-b7fb-f7799af020a1" name="Default Changelist" comment="" />
+      <created>1571124027618</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1571124027618</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/nema/kafka/MySourceTask.java</url>
+          <line>141</line>
+          <properties class="com.nema.kafka.MySourceTask" method="generateSourceRecord">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/nema/kafka/MySourceConnector.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/nema/kafka/MySourceTaskTest.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

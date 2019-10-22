@@ -1,0 +1,5 @@
+com/nema/kafka/MySourceTaskTest.class
+com/nema/kafka/model/salesTest.class
+com/nema/kafka/OdooApIHttpClientTest.class
+com/nema/kafka/MySourceConnectorTest.class
+com/nema/kafka/MySourceConnectorConfigTest.class
