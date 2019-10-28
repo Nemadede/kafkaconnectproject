@@ -1,7 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1486a231-a3c5-4666-b7fb-f7799af020a1" name="Default Changelist" comment="" />
+    <list default="true" id="1486a231-a3c5-4666-b7fb-f7799af020a1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nema/kafka/MySourceConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nema/kafka/MySourceConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nema/kafka/MySourceConnectorConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nema/kafka/MySourceConnectorConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nema/kafka/MySourceTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nema/kafka/MySourceTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nema/kafka/OdooApIHttpClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nema/kafka/OdooApIHttpClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/nema/kafka/MySourceTaskTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/nema/kafka/MySourceTaskTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/allclasses-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/allclasses-frame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/allclasses-noframe.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/allclasses-noframe.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/MessageLoggingTransport.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/MessageLoggingTransport.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/MySourceConnector.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/MySourceConnector.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/MySourceConnectorConfig.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/MySourceConnectorConfig.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/MySourceSchema.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/MySourceSchema.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/MySourceTask.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/MySourceTask.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/OdooApIHttpClient.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/OdooApIHttpClient.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/Validators/BatchSizeValidator.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/Validators/BatchSizeValidator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/Validators/TimestampValidator.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/Validators/TimestampValidator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/Validators/class-use/BatchSizeValidator.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/Validators/class-use/BatchSizeValidator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/Validators/class-use/TimestampValidator.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/Validators/class-use/TimestampValidator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/Validators/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/Validators/package-frame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/Validators/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/Validators/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/Validators/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/Validators/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/Validators/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/Validators/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/class-use/MessageLoggingTransport.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/class-use/MessageLoggingTransport.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/class-use/MySourceConnector.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/class-use/MySourceConnector.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/class-use/MySourceConnectorConfig.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/class-use/MySourceConnectorConfig.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/class-use/MySourceSchema.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/class-use/MySourceSchema.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/class-use/MySourceTask.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/class-use/MySourceTask.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/class-use/OdooApIHttpClient.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/class-use/OdooApIHttpClient.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/models/Sales.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/models/Sales.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/models/class-use/Sales.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/models/class-use/Sales.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/models/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/models/package-frame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/models/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/models/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/models/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/models/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/models/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/models/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/package-frame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/utils/DateUtils.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/utils/DateUtils.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/utils/class-use/DateUtils.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/utils/class-use/DateUtils.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/utils/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/utils/package-frame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/utils/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/utils/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/utils/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/utils/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/utils/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/utils/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/validate/UserNameValidator.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/validate/UserNameValidator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/validate/class-use/UserNameValidator.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/validate/class-use/UserNameValidator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/validate/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/validate/package-frame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/validate/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/validate/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/validate/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/validate/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/validate/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/validate/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/constant-values.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/deprecated-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/deprecated-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/help-doc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/index-all.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/index-all.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/overview-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/overview-frame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/overview-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/overview-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/overview-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nema/kafka/MySourceConnector.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nema/kafka/MySourceConnector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nema/kafka/MySourceConnectorConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nema/kafka/MySourceConnectorConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nema/kafka/MySourceTask$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nema/kafka/MySourceTask$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nema/kafka/MySourceTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nema/kafka/MySourceTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nema/kafka/OdooApIHttpClient$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nema/kafka/OdooApIHttpClient$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nema/kafka/OdooApIHttpClient$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nema/kafka/OdooApIHttpClient$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nema/kafka/OdooApIHttpClient$3$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nema/kafka/OdooApIHttpClient$3$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nema/kafka/OdooApIHttpClient$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nema/kafka/OdooApIHttpClient$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nema/kafka/OdooApIHttpClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nema/kafka/OdooApIHttpClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/kafka-connect-target/usr/share/kafka-connect/kafka-connectProject/kafka-connectproject-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/kafka-connect-target/usr/share/kafka-connect/kafka-connectProject/kafka-connectproject-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/kafka-connectproject-1.0-SNAPSHOT-javadoc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/kafka-connectproject-1.0-SNAPSHOT-javadoc.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/kafka-connectproject-1.0-SNAPSHOT-sources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/kafka-connectproject-1.0-SNAPSHOT-sources.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/kafka-connectproject-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/kafka-connectproject-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/kafka-connectproject-1.0-SNAPSHOT.tar.gz" beforeDir="false" afterPath="$PROJECT_DIR$/target/kafka-connectproject-1.0-SNAPSHOT.tar.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nema.kafka.MySourceConnectorConfigTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nema.kafka.MySourceConnectorConfigTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nema.kafka.MySourceConnectorTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nema.kafka.MySourceConnectorTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nema.kafka.MySourceTaskTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nema.kafka.MySourceTaskTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.nema.kafka.MySourceConnectorConfigTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.nema.kafka.MySourceConnectorConfigTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.nema.kafka.MySourceConnectorTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.nema.kafka.MySourceConnectorTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.nema.kafka.MySourceTaskTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.nema.kafka.MySourceTaskTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/nema/kafka/MySourceTaskTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/nema/kafka/MySourceTaskTest.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,12 +94,19 @@
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
   </component>
+  <component name="ErrorTreeViewConfiguration">
+    <option name="hideWarnings" value="true" />
+    <option name="HIDE_WARNINGS" value="true" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -34,8 +124,14 @@
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1SELu0ZVNMMG0LOHavZFOxzTTL9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="MTConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.nema.kafka" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -50,22 +146,6 @@
     </option>
   </component>
   <component name="RunManager" selected="JUnit.MySourceTaskTest.test">
-    <configuration name="MySourceConnectorConfigTest.canReadConfigCorrectly" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="kafka-connectProject" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.nema.kafka.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.nema.kafka" />
-      <option name="MAIN_CLASS_NAME" value="com.nema.kafka.MySourceConnectorConfigTest" />
-      <option name="METHOD_NAME" value="canReadConfigCorrectly" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="MySourceConnectorTest.taskConfigsShouldReturnOneTaskConfig" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="kafka-connectProject" />
       <extension name="coverage">
@@ -129,6 +209,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MySourceTaskTest.test7" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="kafka-connectProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nema.kafka.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.nema.kafka" />
+      <option name="MAIN_CLASS_NAME" value="com.nema.kafka.MySourceTaskTest" />
+      <option name="METHOD_NAME" value="test7" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="com.nema.kafka in kafka-connectProject" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="kafka-connectProject" />
       <extension name="coverage">
@@ -149,10 +245,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.MySourceTaskTest.test" />
+        <item itemvalue="JUnit.MySourceTaskTest.test7" />
         <item itemvalue="JUnit.MySourceTaskTest" />
         <item itemvalue="JUnit.MySourceConnectorTest.taskReturn" />
         <item itemvalue="JUnit.MySourceConnectorTest.taskConfigsShouldReturnOneTaskConfig" />
-        <item itemvalue="JUnit.MySourceConnectorConfigTest.canReadConfigCorrectly" />
       </list>
     </recent_temporary>
   </component>
@@ -169,26 +265,34 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/nema/kafka/MySourceTask.java</url>
-          <line>141</line>
-          <properties class="com.nema.kafka.MySourceTask" method="generateSourceRecord">
+          <url>file://$PROJECT_DIR$/src/test/java/com/nema/kafka/MySourceTaskTest.java</url>
+          <line>30</line>
+          <properties class="com.nema.kafka.MySourceTaskTest" method="test">
             <option name="EMULATED" value="true" />
           </properties>
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/nema/kafka/MySourceConnector.java</url>
           <line>48</line>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/nema/kafka/MySourceTaskTest.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

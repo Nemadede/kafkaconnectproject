@@ -47,6 +47,7 @@ public class MySourceConnector extends SourceConnector {
   @Override
   public Class<? extends Task> taskClass() {
     // Return your task implementation.
+//    return tstClass.class;
     return MySourceTask.class;
   }
 

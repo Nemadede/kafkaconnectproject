@@ -52,13 +52,6 @@ public class MySourceConnectorConfig extends AbstractConfig {
 
   public static ConfigDef config() {
     return new ConfigDef()
-//        .define(
-//            ConfigKeyBuilder.of(TOPIC_CONFIG, Type.STRING)
-//                .documentation(TOPIC_DOC)
-//                .importance(Importance.HIGH)
-//                .build()
-//        );
-// define configurations of odoo users with parameters
           .define(TOPIC_CONFIG,Type.STRING,Importance.HIGH,TOPIC_DOC)
           .define(OWNER_URL_CONFIG,Type.STRING,Importance.HIGH,OWNER_DOC)
           .define(AUTH_USERNAME_CONFIG,Type.STRING,Importance.HIGH, AUTH_USERNAME_DOC)

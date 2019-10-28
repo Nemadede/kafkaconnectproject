@@ -6,6 +6,8 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.xmlrpc.XmlRpcException;
 import org.apache.xmlrpc.client.*;
+
+import java.io.Serializable;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.*;
@@ -13,7 +15,7 @@ import java.util.*;
 import static java.util.Arrays.asList;
 import static java.util.Collections.emptyList;
 
-public class OdooApIHttpClient {
+public class OdooApIHttpClient implements Serializable {
 
 
 //    public
@@ -96,7 +98,9 @@ public MySourceConnectorConfig config;
      * @return boolean bool
      */
     public boolean login (String host, String database, String user, String password) {
+        System.out.println("Starting login");
         LOGGER.debug(String.format("Starting connection... to %s - %s as %s", host, database, user));
+        System.out.println("Starting login");
         if (host == null || host.isEmpty()) {
             LOGGER.fatal("[OdooXmlRpc.login] Host should not be empty");
             return false;

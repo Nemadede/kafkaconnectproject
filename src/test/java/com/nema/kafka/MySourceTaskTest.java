@@ -13,6 +13,8 @@ import static com.nema.kafka.MySourceConnectorConfig.TOPIC_CONFIG;
 
 public class MySourceTaskTest {
     MySourceTask mySourceTask = new MySourceTask();
+    tstClass testclass = new tstClass();
+
 
     private Map<String, String> initialConfig(){
         Map<String, String> baseProps = new HashMap<>();
@@ -28,12 +30,16 @@ public class MySourceTaskTest {
     @Test
     public void test() throws InterruptedException {
         mySourceTask.config = new MySourceConnectorConfig(initialConfig());
-        mySourceTask.nextQuerySince = Instant.parse("2017-01-01T00:00:00Z");
-        mySourceTask.lastIdNumber = 1;
-        mySourceTask.odooApIHttpClient = new OdooApIHttpClient(mySourceTask.config);
-        mySourceTask.odooApIHttpClient.login("http://localhost:8069","demodb","demodb@demo.com","123456");
-       List pull =  mySourceTask.poll();
-       System.out.println(pull);
-
+        mySourceTask.start(initialConfig());
+      mySourceTask.poll();
     }
+
+//    @Test
+//    public void test7() throws InterruptedException {
+//
+//        List pull =  testclass.poll();
+//        System.out.println(pull);
+//
+//    }
+
 }
