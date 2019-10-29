@@ -7,11 +7,14 @@ com/nema/kafka/OdooApIHttpClient$3$1.class
 com/nema/kafka/MessageLoggingTransport.class
 com/nema/kafka/OdooApIHttpClient$1.class
 com/nema/kafka/validate/UserNameValidator.class
+com/nema/kafka/tstClass$1.class
 com/nema/kafka/Validators/BatchSizeValidator.class
 com/nema/kafka/MySourceTask$1.class
+com/nema/kafka/ProductSchema.class
 com/nema/kafka/utils/DateUtils.class
 com/nema/kafka/OdooApIHttpClient$2.class
 com/nema/kafka/OdooApIHttpClient.class
+com/nema/kafka/models/ProductPricelist.class
 com/nema/kafka/MySourceSchema.class
 com/nema/kafka/models/Sales.class
 com/nema/kafka/OdooApIHttpClient$3.class

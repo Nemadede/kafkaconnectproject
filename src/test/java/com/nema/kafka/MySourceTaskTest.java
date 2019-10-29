@@ -22,24 +22,25 @@ public class MySourceTaskTest {
         baseProps.put(AUTH_USERNAME_CONFIG, "demodb@demo.com");
         baseProps.put(AUTH_PASSWORD_CONFIG, "123456");
         baseProps.put(AUTH_DATABASE_CONFIG, "demodb");
-        baseProps.put(MODEL_NAME,"sale.order");
+        baseProps.put(MODEL_NAME,"product.pricelist");
         baseProps.put(TOPIC_CONFIG, "OdooOne");
         return baseProps;
     }
 
-    @Test
-    public void test() throws InterruptedException {
-        mySourceTask.config = new MySourceConnectorConfig(initialConfig());
-        mySourceTask.start(initialConfig());
-      mySourceTask.poll();
-    }
-
 //    @Test
-//    public void test7() throws InterruptedException {
-//
-//        List pull =  testclass.poll();
-//        System.out.println(pull);
-//
+//    public void test() throws InterruptedException {
+//        mySourceTask.config = new MySourceConnectorConfig(initialConfig());
+//        mySourceTask.start(initialConfig());
+//      mySourceTask.poll();
 //    }
+
+    @Test
+    public void test7() throws InterruptedException {
+testclass.config = new MySourceConnectorConfig(initialConfig());
+testclass.start(initialConfig());
+        List pull =  testclass.poll();
+        System.out.println(pull);
+
+    }
 
 }

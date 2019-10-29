@@ -53,7 +53,7 @@ public class MySourceSchema {
     public static String SALE_ORDER_FIELD = "sale_order_template_id";
 
     //schema names
-    public static String SCHEMA_KEY = "Odoo Table Key";
+    public static String SCHEMA_KEY = "OdooTableKey";
     public static String SCHEMA_VALUE_PRODUCT_CATEGORY = "product_category";
     public static String SCHEMA_VALUE_SALES_ORDER = "sales_order";
 
@@ -101,7 +101,7 @@ public class MySourceSchema {
 //            .field(TABLE_NOTE_FIELD,Schema.STRING_SCHEMA)
 //            .field(TABLE_ORIGIN_FIELD,Schema.BOOLEAN_SCHEMA)
 //            .field(ACCESS_TOKEN_FIELD,Schema.STRING_SCHEMA)
-            .field(TABLE_NAME_FIELD, Schema.STRING_SCHEMA)
+//            .field(TABLE_NAME_FIELD, Schema.STRING_SCHEMA)
 //            .field(COMPANY_ID_FIELD, Schema.INT32_SCHEMA)
 //            .field(TEAM_ID_FIELD, Schema.INT32_SCHEMA)
 //            .field(CREATED_AT_FIELD, Schema.STRING_SCHEMA)

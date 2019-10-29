@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1486a231-a3c5-4666-b7fb-f7799af020a1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nema/kafka/ProductSchema.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nema/kafka/models/ProductPricelist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nema/kafka/MySourceConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nema/kafka/MySourceConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nema/kafka/MySourceConnectorConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nema/kafka/MySourceConnectorConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nema/kafka/MySourceSchema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nema/kafka/MySourceSchema.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nema/kafka/MySourceTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nema/kafka/MySourceTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nema/kafka/OdooApIHttpClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nema/kafka/OdooApIHttpClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/nema/kafka/MySourceTaskTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/nema/kafka/MySourceTaskTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/apidocs/allclasses-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/allclasses-frame.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/apidocs/allclasses-noframe.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/allclasses-noframe.html" afterDir="false" />
@@ -31,6 +31,7 @@
       <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/class-use/MySourceSchema.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/class-use/MySourceSchema.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/class-use/MySourceTask.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/class-use/MySourceTask.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/class-use/OdooApIHttpClient.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/class-use/OdooApIHttpClient.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/class-use/tstClass.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/class-use/tstClass.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/models/Sales.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/models/Sales.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/models/class-use/Sales.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/models/class-use/Sales.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/models/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/models/package-frame.html" afterDir="false" />
@@ -41,6 +42,7 @@
       <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/package-summary.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/package-tree.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/package-use.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/package-use.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/tstClass.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/tstClass.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/utils/DateUtils.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/utils/DateUtils.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/utils/class-use/DateUtils.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/utils/class-use/DateUtils.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/utils/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/com/nema/kafka/utils/package-frame.html" afterDir="false" />
@@ -61,29 +63,22 @@
       <change beforePath="$PROJECT_DIR$/target/apidocs/overview-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/overview-frame.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/apidocs/overview-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/overview-summary.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/apidocs/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/overview-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/apidocs/serialized-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/apidocs/serialized-form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/nema/kafka/MySourceConnector.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nema/kafka/MySourceConnector.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nema/kafka/MySourceConnectorConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nema/kafka/MySourceConnectorConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/nema/kafka/MySourceSchema.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nema/kafka/MySourceSchema.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/nema/kafka/MySourceTask$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nema/kafka/MySourceTask$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/nema/kafka/MySourceTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nema/kafka/MySourceTask.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nema/kafka/OdooApIHttpClient$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nema/kafka/OdooApIHttpClient$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nema/kafka/OdooApIHttpClient$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nema/kafka/OdooApIHttpClient$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nema/kafka/OdooApIHttpClient$3$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nema/kafka/OdooApIHttpClient$3$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nema/kafka/OdooApIHttpClient$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nema/kafka/OdooApIHttpClient$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/nema/kafka/OdooApIHttpClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/nema/kafka/OdooApIHttpClient.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/kafka-connect-target/usr/share/kafka-connect/kafka-connectProject/kafka-connectproject-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/kafka-connect-target/usr/share/kafka-connect/kafka-connectProject/kafka-connectproject-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/kafka-connectproject-1.0-SNAPSHOT-javadoc.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/kafka-connectproject-1.0-SNAPSHOT-javadoc.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/kafka-connectproject-1.0-SNAPSHOT-sources.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/kafka-connectproject-1.0-SNAPSHOT-sources.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/kafka-connectproject-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/kafka-connectproject-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/kafka-connectproject-1.0-SNAPSHOT.tar.gz" beforeDir="false" afterPath="$PROJECT_DIR$/target/kafka-connectproject-1.0-SNAPSHOT.tar.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nema.kafka.MySourceConnectorConfigTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nema.kafka.MySourceConnectorConfigTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nema.kafka.MySourceConnectorTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nema.kafka.MySourceConnectorTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nema.kafka.MySourceTaskTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.nema.kafka.MySourceTaskTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.nema.kafka.MySourceConnectorConfigTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.nema.kafka.MySourceConnectorConfigTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.nema.kafka.MySourceConnectorTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.nema.kafka.MySourceConnectorTest.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.nema.kafka.MySourceTaskTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.nema.kafka.MySourceTaskTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/nema/kafka/MySourceTaskTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/nema/kafka/MySourceTaskTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -145,7 +140,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MySourceTaskTest.test">
+  <component name="RunManager" selected="JUnit.MySourceTaskTest.test7">
     <configuration name="MySourceConnectorTest.taskConfigsShouldReturnOneTaskConfig" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="kafka-connectProject" />
       <extension name="coverage">
@@ -244,8 +239,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MySourceTaskTest.test" />
         <item itemvalue="JUnit.MySourceTaskTest.test7" />
+        <item itemvalue="JUnit.MySourceTaskTest.test" />
         <item itemvalue="JUnit.MySourceTaskTest" />
         <item itemvalue="JUnit.MySourceConnectorTest.taskReturn" />
         <item itemvalue="JUnit.MySourceConnectorTest.taskConfigsShouldReturnOneTaskConfig" />

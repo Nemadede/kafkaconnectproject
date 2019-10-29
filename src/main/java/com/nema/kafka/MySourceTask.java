@@ -1,17 +1,13 @@
 package com.nema.kafka;
 
 import com.alibaba.fastjson.JSON;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectWriter;
 import com.github.jcustenborder.kafka.connect.utils.VersionUtil;
 import com.nema.kafka.models.Sales;
-//import org.apache.http.client.utils.DateUtils;
-import com.nema.kafka.utils.DateUtils;
 import org.apache.kafka.connect.data.Struct;
 import org.apache.kafka.connect.source.SourceRecord;
 import org.apache.kafka.connect.source.SourceTask;
-import org.json.*;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,14 +20,15 @@ import java.util.Map;
 import static com.nema.kafka.MySourceConnectorConfig.AUTH_USERNAME_CONFIG;
 import static com.nema.kafka.MySourceConnectorConfig.OWNER_URL_CONFIG;
 import static com.nema.kafka.MySourceSchema.*;
-import static com.nema.kafka.OdooApIHttpClient.LOGGER;
 import static java.util.Arrays.asList;
+
+//import org.apache.http.client.utils.DateUtils;
 
 public class MySourceTask extends SourceTask {
   public  MySourceConnectorConfig config;
   private static final Logger log = LoggerFactory.getLogger(MySourceTask.class);
   OdooApIHttpClient odooApIHttpClient = new OdooApIHttpClient();
-//   OdooApIHttpClient odooApIHttpClient;
+
   @Override
   public String version() {
     return VersionUtil.version(this.getClass());
@@ -54,7 +51,9 @@ public class MySourceTask extends SourceTask {
     Object object = odooApIHttpClient.executeMethod( config.getModelName(),"search_read",asList(asList(
             asList("amount_total", ">", 0))),
             new HashMap() {{
-              put("fields", asList("name","state","date_order","require_signature","require_payment","create_date","confirmation_date","user_id","partner_id","partner_invoice_id","partner_shipping_id","pricelist_id","amount_total", "currency_rate", "amount_untaxed","invoice_status","currency_rate","payment_term_id","company_id","team_id","commitment_date","create_uid","write_uid", "write_date","sale_order_template_id","campaign_id","source_id","medium_id","opportunity_id"));
+//              put("fields", asList("name","state","date_order","require_signature","require_payment","create_date","confirmation_date","user_id","partner_id","partner_invoice_id","partner_shipping_id","pricelist_id","amount_total", "currency_rate", "amount_untaxed","invoice_status","currency_rate","payment_term_id","company_id","team_id","commitment_date","create_uid","write_uid", "write_date","sale_order_template_id","campaign_id","source_id","medium_id","opportunity_id"));
+              put("fields", asList("name","state","amount_total", "currency_rate","amount_untaxed","invoice_status"));
+
             }});
 //   JSONArray json = objectToJSONArray(object);
 //    ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
@@ -64,14 +63,16 @@ public class MySourceTask extends SourceTask {
 //    } catch (JsonProcessingException e) {
 //      e.printStackTrace();
 ////    }
+      System.out.println("The object   " + object.getClass().toString());
       String json = JSON.toJSONString(object);
-      System.out.println("Json data print out______________________________________________" + json);
+//      System.out.println("Json data print out______________________________________________" + json);
 
     JSONArray json2 = new JSONArray(json);
-    System.out.println( "Here is nine's request________________________" + json2);
+//    System.out.println( "Here is nine's request________________________" + json2);
    for(Object obj: json2){
      Sales sale = Sales.fromJson((JSONObject) obj);
      SourceRecord sourceRecord = generateSourceRecord(sale);
+     System.out.println("Here we go ++++++++++++++++++++++++++++++++ " + sourceRecord);
      records.add(sourceRecord);
    }
 //
@@ -83,7 +84,7 @@ public class MySourceTask extends SourceTask {
               sourcePartition(),
               null,
               config.getTopicConfig(),
-              1,
+              0,
               KEY_SCHEMA,
               buildRecordKey(sale),
               TABLE_SCHEMA,
@@ -101,6 +102,8 @@ public class MySourceTask extends SourceTask {
   // source partition method
   private Map<String,String>  sourcePartition() {
     Map<String,String> map = new HashMap<>();
+map.put(OWNER_URL_CONFIG,config.getOwnerConfig());
+map.put(AUTH_USERNAME_CONFIG,config.getAuthUsernameConfig());
 
     return map;
   }
@@ -115,7 +118,7 @@ public class MySourceTask extends SourceTask {
   private Struct buildRecordKey(Sales sale){
     //key schema
     Struct key = new Struct(KEY_SCHEMA)
-            .put(TABLE_NAME_FIELD, config.getModelName());
+            .put(TABLE_NAME_FIELD, sale.getName());
 //            .put(CREATE_DATE_FIELD, sale.getCreated_date())
 //            .put(USER_ID_FIELD, sale.getId());
     return key;
@@ -129,6 +132,7 @@ public class MySourceTask extends SourceTask {
 //              .put(AMOUNT_TAX_FIELD, sale.getAmount_tax())
             .put(AMOUNT_TOTAL_FIELD,sale.getAmount_total())
             .put(CURRENCY_RATE_FIELD,sale.getCurrency_rate())
+//              .put(TABLE_STATE_FIELD,sale.getState())
 //              .put(ACCESS_TOKEN_FIELD,sale.getAccess_token())
 //              .put(TABLE_NOTE_FIELD,sale.getNote())
 //              .put(TABLE_ORIGIN_FIELD,sale.getOrigin())
