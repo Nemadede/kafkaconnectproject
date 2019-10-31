@@ -57,7 +57,7 @@ public class MySourceConnectorConfig extends AbstractConfig {
           .define(AUTH_USERNAME_CONFIG,Type.STRING,Importance.HIGH, AUTH_USERNAME_DOC)
           .define(AUTH_PASSWORD_CONFIG,Type.STRING,Importance.HIGH,AUTH_PASSWORD_DOC)
           .define(AUTH_DATABASE_CONFIG,Type.STRING,Importance.HIGH,AUTH_DATABASE_DOC)
-            .define(MODEL_NAME, Type.STRING,Importance.HIGH,MODEL_NAME_DOC);
+            .define(MODEL_NAME, Type.STRING,"",Importance.LOW,MODEL_NAME_DOC);
   }
 
   public  String getOwnerConfig(){return this.getString(OWNER_URL_CONFIG);}

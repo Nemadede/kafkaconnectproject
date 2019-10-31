@@ -4,7 +4,7 @@ import org.apache.kafka.connect.data.Schema;
 import org.apache.kafka.connect.data.SchemaBuilder;
 
 public class ProductSchema {
-    public static String FIELD_ID = "id";
+    public static String FIELD_ID = "p";
     public static String NAME = "name";
     public static String ACTIVE = "active";
     public static String SEQUENCE = "sequence";

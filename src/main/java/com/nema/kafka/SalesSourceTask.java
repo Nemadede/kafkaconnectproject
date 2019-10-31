@@ -66,32 +66,52 @@ public class SalesSourceTask extends SourceTask {
 //
 //        finaljson.put(json3.get(0).toString());
 //        finaljson.put(json3.get(1).toString());
-        int i = 0;
 
-        System.out.println(json3.getJSONObject(i).getJSONArray("product_id").toString());
+//        System.out.println(json3.getJSONObject(0).append((String) json4.optJSONObject(0).names().opt(0), json4.optJSONObject(0).get((String) json4.optJSONObject(0).names().opt(0))));
+//        System.out.println(json3);
+        for (int i=0; i<json3.length(); i++){
+            for (int j=0; j<json4.length(); j++){
+                json3.getJSONObject(i).append((String) json4.optJSONObject(j).names().opt(j), json4.optJSONObject(j).get((String) json4.optJSONObject(j).names().opt(j)));
 
-        for (int k=0; i<json3.length(); k++){
-            if (json3.getJSONObject(i).has("product_id")) {
-//                String value = json3.getJSONObject(i).getJSONArray("product_id").toString();
-//                json3.getJSONObject(i).put("product_id", value);
+                System.out.println("---------------------------------------------------------------------------");
+                System.out.println(json3);
+                System.out.println("---------------------------------------------------------------------------");
+            }
+
+            System.out.println("--------------------------------------------------------------------------ee-");
+            System.out.println(json3);
+            System.out.println("------------------------------------------------------------------------ee---");
+        }
+
+        System.out.println("---------------------------------------------------------------------------");
+        System.out.println(json3);
+        System.out.println("---------------------------------------------------------------------------");
+
+
+        for (int k=0; k<json3.length(); k++){
+            if (json3.getJSONObject(k).has("product_id")) {
+                String value = json3.getJSONObject(k).getJSONArray("product_id").toString();
+                json3.getJSONObject(k).put("product_id", value);
+            }
+            if (json3.getJSONObject(k).has("order_id")) {
+                String value = json3.getJSONObject(k).getJSONArray("order_id").toString();
+                json3.getJSONObject(k).put("order_id", value);
             }
         }
 
-        System.out.println(json3);
+//        System.out.println(json3);
         for(Object obj: json3){
 //            if (json3.optJSONObject(i).names().opt(i)=="product_id"||json3.getJSONObject(i).has("product_id")) {}
 //            json3.optJSONObject(i).names().opt(i)="product_id";
 
 //            System.out.println(json3.getJSONObject(i).getJSONArray("product_id").toString());
-            i++;
+//            i++;
             finaljson.put(obj);
         }
         for(Object obj: json4){
             finaljson.put(obj);
         }
-        for (int j = 0; j<finaljson.length(); j++){
-
-        }
+        System.out.println(finaljson);
         for(Object obj: finaljson){
             SalesModel salesModel = SalesModel.fromJson((JSONObject) obj);
             SourceRecord sourceRecord = generateSourceRecord(salesModel);
