@@ -18,6 +18,9 @@ public class SaleSchema {
     public static String CONFIRMATION_DATE = "confirmation_date";
     public static String PARTNER_ID = "partner_id";
     public static String INVOICE_STATUS = "invoice_status";
+    public static String COMPANY_NAME = "company_name";
+    public static String PRODUCT_NAME = "product_name";
+    public static String PARTNER_NAME = "partner_name";
     public static String TABLE_NAME = "sale_table";
 //
 //    public static String COMPANY_NAME = "";
@@ -29,8 +32,8 @@ public class SaleSchema {
     private static final String VSNAME = "schema_name";
     public static Schema ValueSchema = SchemaBuilder.struct().name(VSNAME)
         .version(1)
-            .field(PRODUCT_ID,Schema.STRING_SCHEMA)
-            .field(ORDER_ID,Schema.STRING_SCHEMA)
+            .field(PRODUCT_ID,Schema.INT32_SCHEMA)
+//            .field(ORDER_ID,Schema.STRING_SCHEMA)
             .field(NAME,Schema.STRING_SCHEMA)
             .field( PRICE_TOTAL, Schema.FLOAT32_SCHEMA)
             .field( PRICE_UNIT, Schema.FLOAT32_SCHEMA)
@@ -39,10 +42,13 @@ public class SaleSchema {
             .field( AMOUNT_TAX, Schema.FLOAT32_SCHEMA)
             .field( AMOUNT_TOTAL, Schema.FLOAT32_SCHEMA)
             .field( AMOUNT_UNTAXED , Schema.FLOAT32_SCHEMA)
-            .field(COMPANY_ID ,Schema.STRING_SCHEMA)
+            .field(COMPANY_ID ,Schema.INT32_SCHEMA)
             .field( CONFIRMATION_DATE,Schema.STRING_SCHEMA)
-            .field( PARTNER_ID,Schema.STRING_SCHEMA)
+            .field( PARTNER_ID,Schema.INT32_SCHEMA)
             .field(INVOICE_STATUS,Schema.STRING_SCHEMA)
+            .field(COMPANY_NAME,Schema.STRING_SCHEMA)
+            .field(PRODUCT_NAME,Schema.STRING_SCHEMA)
+            .field(PARTNER_NAME,Schema.STRING_SCHEMA)
         .build();
 
 

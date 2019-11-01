@@ -9,6 +9,7 @@ import org.apache.kafka.connect.data.Struct;
 import org.apache.kafka.connect.source.SourceRecord;
 import org.apache.kafka.connect.source.SourceTask;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -47,7 +48,7 @@ public class SalesSourceTask extends SourceTask {
         Object object = odooApIHttpClient.executeMethod( "sale.order.line","search_read",asList(asList(
                 asList("price_unit",">",0))),
                 new HashMap() {{
-                    put("fields", asList("product_id","order_id","name", "price_total","price_unit","create_date", "write_date", "order_partner_id"));
+                    put("fields", asList("product_id","order_id","name", "price_total","price_unit","create_date", "write_date"));
 
                 }});
         Object object2 = odooApIHttpClient.executeMethod( "sale.order","search_read",asList(asList(
@@ -62,73 +63,61 @@ public class SalesSourceTask extends SourceTask {
 
         JSONArray json3 = new JSONArray(json);
         JSONArray json4 = new JSONArray(json2);
-        JSONArray finaljson = new JSONArray();
-//
-//        finaljson.put(json3.get(0).toString());
-//        finaljson.put(json3.get(1).toString());
 
-//        System.out.println(json3.getJSONObject(0).append((String) json4.optJSONObject(0).names().opt(0), json4.optJSONObject(0).get((String) json4.optJSONObject(0).names().opt(0))));
-//        System.out.println(json3);
+int a= 0, b=0;
+
+
         for (int i=0; i<json3.length(); i++){
-            for (int j=0; j<json4.length(); j++){
-                json3.getJSONObject(i).append((String) json4.optJSONObject(j).names().opt(j), json4.optJSONObject(j).get((String) json4.optJSONObject(j).names().opt(j)));
 
-                System.out.println("---------------------------------------------------------------------------");
-                System.out.println(json3);
-                System.out.println("---------------------------------------------------------------------------");
+            json3.optJSONObject(i).remove("id");
+
+            for (int k = 0; k<json4.length(); k++) {
+
+                json3.optJSONObject(k).remove("id");
+
+                if (json3.getJSONObject(i).getJSONArray("order_id").get(0) == json4.optJSONObject(k).get("id")){
+
+                    for (int j = 0; j<json4.optJSONObject(k).length(); j++){
+
+                        try {
+                                json3.getJSONObject(i).put((String) json4.optJSONObject(k).names().opt(j), json4.optJSONObject(k).get((String) json4.optJSONObject(k).names().opt(j)));
+
+                            }catch (JSONException e){
+                                e.printStackTrace();
+                            }
+
+                    }
+                    a++;
+
+                }
             }
 
-            System.out.println("--------------------------------------------------------------------------ee-");
-            System.out.println(json3);
-            System.out.println("------------------------------------------------------------------------ee---");
         }
 
-        System.out.println("---------------------------------------------------------------------------");
-        System.out.println(json3);
-        System.out.println("---------------------------------------------------------------------------");
+        for (int k=0; k<json3.length(); k++) {
 
+            json3.getJSONObject(k).put("product_name", json3.getJSONObject(k).getJSONArray("product_id").get(1));
+            json3.getJSONObject(k).put("partner_name", json3.getJSONObject(k).getJSONArray("partner_id").get(1));
+            json3.getJSONObject(k).put("company_name", json3.getJSONObject(k).getJSONArray("company_id").get(1));
+            json3.getJSONObject(k).put("product_id", json3.getJSONObject(k).getJSONArray("product_id").get(0));
+            json3.getJSONObject(k).put("partner_id", json3.getJSONObject(k).getJSONArray("partner_id").get(0));
+            json3.getJSONObject(k).put("company_id", json3.getJSONObject(k).getJSONArray("company_id").get(0));
+            json3.getJSONObject(k).put("confirmation_date", json3.getJSONObject(k).get("confirmation_date").toString());
 
-        for (int k=0; k<json3.length(); k++){
-            if (json3.getJSONObject(k).has("product_id")) {
-                String value = json3.getJSONObject(k).getJSONArray("product_id").toString();
-                json3.getJSONObject(k).put("product_id", value);
-            }
-            if (json3.getJSONObject(k).has("order_id")) {
-                String value = json3.getJSONObject(k).getJSONArray("order_id").toString();
-                json3.getJSONObject(k).put("order_id", value);
-            }
         }
 
-//        System.out.println(json3);
+        System.out.println("Clean data boy, see it------------"+json3);
+        System.out.println("One record from clean data----:)" + json3.optJSONObject(0));
+
+        SourceRecord sourceRecord = null;
+
         for(Object obj: json3){
-//            if (json3.optJSONObject(i).names().opt(i)=="product_id"||json3.getJSONObject(i).has("product_id")) {}
-//            json3.optJSONObject(i).names().opt(i)="product_id";
-
-//            System.out.println(json3.getJSONObject(i).getJSONArray("product_id").toString());
-//            i++;
-            finaljson.put(obj);
-        }
-        for(Object obj: json4){
-            finaljson.put(obj);
-        }
-        System.out.println(finaljson);
-        for(Object obj: finaljson){
             SalesModel salesModel = SalesModel.fromJson((JSONObject) obj);
-            SourceRecord sourceRecord = generateSourceRecord(salesModel);
-            System.out.println("Here we go ++++++++++++++++++++++++++++++++ " + sourceRecord);
+            sourceRecord = generateSourceRecord(salesModel);
             records.add(sourceRecord);
         }
 
-//        HashMap HashMap1 = new Gson().fromJson(object.toString(), HashMap.class);
-//        HashMap HashMap2 = new Gson().fromJson(object2.toString(), HashMap.class);
-//
-//        while(HashMap1.h) {
-//            Map.Entry mentry = (Map.Entry)HashMap1.next();
-//            System.out.print("key is: "+ mentry.getKey() + " & Value is: ");
-//            System.out.println(mentry.getValue());
-//        }
-
-
+        System.out.println("Here we go ++++++++++++++++++++++++++++++++ " + sourceRecord);
 
 
         return records;
@@ -159,7 +148,7 @@ public class SalesSourceTask extends SourceTask {
     private Struct buildRecordValue(SalesModel sale){
         Struct valueStruct = new Struct(ValueSchema)
                 .put(PRODUCT_ID,sale.getProduct_id())
-                .put(ORDER_ID,sale.getOrder_id())
+//                .put(ORDER_ID,sale.getOrder_id())
                 .put(NAME,sale.getName())
                 .put( PRICE_TOTAL, sale.getPrice_total())
                 .put( PRICE_UNIT, sale.getPrice_unit())
@@ -171,6 +160,9 @@ public class SalesSourceTask extends SourceTask {
                 .put(COMPANY_ID ,sale.getCompany_id())
                 .put( CONFIRMATION_DATE,sale.getConfirmation_date())
                 .put( PARTNER_ID,sale.getPartner_id())
+                .put( PARTNER_NAME,sale.getPartner_name())
+                .put( COMPANY_NAME,sale.getCompany_name())
+                .put( PRODUCT_NAME,sale.getProduct_name())
                 .put(INVOICE_STATUS,sale.getInvoice_status());
         return valueStruct;
     }
