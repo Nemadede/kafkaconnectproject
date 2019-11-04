@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.nema.kafka.MySourceTaskTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.125 s - in com.nema.kafka.MySourceTaskTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 57.555 s - in com.nema.kafka.MySourceTaskTest

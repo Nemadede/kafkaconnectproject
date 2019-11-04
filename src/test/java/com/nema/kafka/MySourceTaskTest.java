@@ -14,14 +14,15 @@ import static com.nema.kafka.MySourceConnectorConfig.TOPIC_CONFIG;
 public class MySourceTaskTest {
     MySourceTask mySourceTask = new MySourceTask();
     tstClass testclass = new tstClass();
+    SalesSourceTask salesSourceTask = new SalesSourceTask();
 
 
     private Map<String, String> initialConfig(){
         Map<String, String> baseProps = new HashMap<>();
         baseProps.put(OWNER_URL_CONFIG , "http://localhost:8069");
-        baseProps.put(AUTH_USERNAME_CONFIG, "demodb@demo.com");
-        baseProps.put(AUTH_PASSWORD_CONFIG, "123456");
-        baseProps.put(AUTH_DATABASE_CONFIG, "demodb");
+        baseProps.put(AUTH_USERNAME_CONFIG, "demo@demo.com");
+        baseProps.put(AUTH_PASSWORD_CONFIG, "demo");
+        baseProps.put(AUTH_DATABASE_CONFIG, "Demo");
         baseProps.put(MODEL_NAME,"product.pricelist");
         baseProps.put(TOPIC_CONFIG, "OdooOne");
         return baseProps;
@@ -34,11 +35,20 @@ public class MySourceTaskTest {
 //      mySourceTask.poll();
 //    }
 
+//    @Test
+//    public void test7() throws InterruptedException {
+//testclass.config = new MySourceConnectorConfig(initialConfig());
+//testclass.start(initialConfig());
+//        List pull =  testclass.poll();
+//        System.out.println(pull);
+//
+//    }
+
     @Test
-    public void test7() throws InterruptedException {
-testclass.config = new MySourceConnectorConfig(initialConfig());
-testclass.start(initialConfig());
-        List pull =  testclass.poll();
+    public void test8() throws InterruptedException {
+        salesSourceTask.config = new MySourceConnectorConfig(initialConfig());
+        salesSourceTask.start(initialConfig());
+        List pull =  salesSourceTask.poll();
         System.out.println(pull);
 
     }

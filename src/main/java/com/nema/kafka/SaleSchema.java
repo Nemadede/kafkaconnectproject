@@ -56,6 +56,5 @@ public class SaleSchema {
     public static Schema Keyschema = SchemaBuilder.struct().name(KSSCHEMA)
             .version(1)
             .field("tableName",Schema.STRING_SCHEMA)
-            .field("tableID",Schema.STRING_SCHEMA)
             .build();
 }
