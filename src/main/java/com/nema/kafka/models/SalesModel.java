@@ -5,6 +5,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.lang.reflect.Array;
+import java.time.Instant;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,27 +14,30 @@ import static com.nema.kafka.SaleSchema.*;
 public class SalesModel {
 
  //from sale_order_line table
-    private int product_id;
+ private Integer product_id;
     private String name;
-    private float price_total;
-    private float price_unit;
+    private Float price_total;
+    private Float price_unit;
     private String create_date;
     private String write_date;
-//from sale order table
-private float amount_tax;
-private float amount_total;
-private float amount_untaxed;
-private int company_id;
-private String company_name;
-private String product_name;
-private String partner_name;
-private  String confirmation_date;
-private int  partner_id;
-private String invoice_status;
+    //from sale order table
+    private Float amount_tax;
+    private Float amount_total;
+    private Float amount_untaxed;
+    private Integer company_id;
+    private String company_name;
+    private String product_name;
+    private String partner_name;
+    private  String confirmation_date;
+    private Integer  partner_id;
+    private String invoice_status;
+    private Integer sale_id;
 
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    public SalesModel(int product_id, String name, float price_total, float price_unit, String create_date, String write_date, float amount_tax, float amount_total, float amount_untaxed, int company_id, String company_name, String product_name, String partner_name, String confirmation_date, int partner_id, String invoice_status, Map<String, Object> additionalProperties) {
+    private SalesModel(){}
+
+    public SalesModel(Integer product_id, String name, Float price_total, Float price_unit, String create_date, String write_date, Float amount_tax, Float amount_total, Float amount_untaxed, Integer company_id, String company_name, String product_name, String partner_name, String confirmation_date, Integer partner_id, String invoice_status, Integer sale_id, Map<String, Object> additionalProperties) {
         this.product_id = product_id;
         this.name = name;
         this.price_total = price_total;
@@ -50,14 +54,15 @@ private String invoice_status;
         this.confirmation_date = confirmation_date;
         this.partner_id = partner_id;
         this.invoice_status = invoice_status;
+        this.sale_id = sale_id;
         this.additionalProperties = additionalProperties;
     }
 
-    public int getProduct_id() {
+    public Integer getProduct_id() {
         return product_id;
     }
 
-    public void setProduct_id(int product_id) {
+    public void setProduct_id(Integer product_id) {
         this.product_id = product_id;
     }
 
@@ -69,19 +74,19 @@ private String invoice_status;
         this.name = name;
     }
 
-    public float getPrice_total() {
+    public Float getPrice_total() {
         return price_total;
     }
 
-    public void setPrice_total(float price_total) {
+    public void setPrice_total(Float price_total) {
         this.price_total = price_total;
     }
 
-    public float getPrice_unit() {
+    public Float getPrice_unit() {
         return price_unit;
     }
 
-    public void setPrice_unit(float price_unit) {
+    public void setPrice_unit(Float price_unit) {
         this.price_unit = price_unit;
     }
 
@@ -101,35 +106,35 @@ private String invoice_status;
         this.write_date = write_date;
     }
 
-    public float getAmount_tax() {
+    public Float getAmount_tax() {
         return amount_tax;
     }
 
-    public void setAmount_tax(float amount_tax) {
+    public void setAmount_tax(Float amount_tax) {
         this.amount_tax = amount_tax;
     }
 
-    public float getAmount_total() {
+    public Float getAmount_total() {
         return amount_total;
     }
 
-    public void setAmount_total(float amount_total) {
+    public void setAmount_total(Float amount_total) {
         this.amount_total = amount_total;
     }
 
-    public float getAmount_untaxed() {
+    public Float getAmount_untaxed() {
         return amount_untaxed;
     }
 
-    public void setAmount_untaxed(float amount_untaxed) {
+    public void setAmount_untaxed(Float amount_untaxed) {
         this.amount_untaxed = amount_untaxed;
     }
 
-    public int getCompany_id() {
+    public Integer getCompany_id() {
         return company_id;
     }
 
-    public void setCompany_id(int company_id) {
+    public void setCompany_id(Integer company_id) {
         this.company_id = company_id;
     }
 
@@ -165,11 +170,11 @@ private String invoice_status;
         this.confirmation_date = confirmation_date;
     }
 
-    public int getPartner_id() {
+    public Integer getPartner_id() {
         return partner_id;
     }
 
-    public void setPartner_id(int partner_id) {
+    public void setPartner_id(Integer partner_id) {
         this.partner_id = partner_id;
     }
 
@@ -181,6 +186,14 @@ private String invoice_status;
         this.invoice_status = invoice_status;
     }
 
+    public Integer getSale_id() {
+        return sale_id;
+    }
+
+    public void setSale_id(Integer sale_id) {
+        this.sale_id = sale_id;
+    }
+
     public Map<String, Object> getAdditionalProperties() {
         return additionalProperties;
     }
@@ -189,12 +202,9 @@ private String invoice_status;
         this.additionalProperties = additionalProperties;
     }
 
-    private SalesModel(){}
-
     public static SalesModel fromJson(JSONObject jsonObject) throws JSONException {
         SalesModel salesModel = new SalesModel();
         salesModel.setProduct_id(jsonObject.getInt(PRODUCT_ID));
-//        salesModel.setOrder_id(jsonObject.getString(ORDER_ID));
         salesModel.setName(jsonObject.getString(NAME));
         salesModel.setPrice_total(jsonObject.getFloat(PRICE_TOTAL));
         salesModel.setPrice_unit(jsonObject.getFloat(PRICE_UNIT));
@@ -210,6 +220,7 @@ private String invoice_status;
         salesModel.setCompany_name(jsonObject.getString(COMPANY_NAME));
         salesModel.setPartner_name(jsonObject.getString(PARTNER_NAME));
         salesModel.setProduct_name(jsonObject.getString(PRODUCT_NAME));
+        salesModel.setSale_id(jsonObject.getInt(SALE_ID));
         return salesModel;
     }
 }

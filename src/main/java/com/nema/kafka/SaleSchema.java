@@ -5,7 +5,6 @@ import org.apache.kafka.connect.data.SchemaBuilder;
 
 public class SaleSchema {
     public static String PRODUCT_ID = "product_id";
-    public static String ORDER_ID ="order_id";
     public static String NAME = "name";
     public static String PRICE_TOTAL = "price_total";
     public static String PRICE_UNIT = "price_unit";
@@ -21,19 +20,13 @@ public class SaleSchema {
     public static String COMPANY_NAME = "company_name";
     public static String PRODUCT_NAME = "product_name";
     public static String PARTNER_NAME = "partner_name";
-    public static String TABLE_NAME = "sale_table";
-//
-//    public static String COMPANY_NAME = "";
-//    public static String PARTNER_NAME = "";
-//    public static String ORDER_NAME ="";
-//    public static String PRODUCT_NAME= "";
+    public static String SALE_ID = "sale_id";
 
 
     private static final String VSNAME = "schema_name";
     public static Schema ValueSchema = SchemaBuilder.struct().name(VSNAME)
         .version(1)
             .field(PRODUCT_ID,Schema.INT32_SCHEMA)
-//            .field(ORDER_ID,Schema.STRING_SCHEMA)
             .field(NAME,Schema.STRING_SCHEMA)
             .field( PRICE_TOTAL, Schema.FLOAT32_SCHEMA)
             .field( PRICE_UNIT, Schema.FLOAT32_SCHEMA)
@@ -49,6 +42,7 @@ public class SaleSchema {
             .field(COMPANY_NAME,Schema.STRING_SCHEMA)
             .field(PRODUCT_NAME,Schema.STRING_SCHEMA)
             .field(PARTNER_NAME,Schema.STRING_SCHEMA)
+            .field(SALE_ID,Schema.INT32_SCHEMA)
         .build();
 
 

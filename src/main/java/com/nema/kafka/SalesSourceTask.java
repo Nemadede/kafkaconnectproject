@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.github.jcustenborder.kafka.connect.utils.VersionUtil;
 import com.google.gson.Gson;
 import com.nema.kafka.models.SalesModel;
+import com.nema.kafka.utils.DateUtils;
 import org.apache.kafka.connect.data.Schema;
 import org.apache.kafka.connect.data.Struct;
 import org.apache.kafka.connect.source.SourceRecord;
@@ -14,6 +15,8 @@ import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.time.Instant;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -28,6 +31,9 @@ public class SalesSourceTask extends SourceTask {
     public  MySourceConnectorConfig config;
     private static final Logger log = LoggerFactory.getLogger(MySourceTask.class);
     OdooApIHttpClient odooApIHttpClient = new OdooApIHttpClient();
+
+    protected Instant nextQuerySince;
+    protected Integer lastIdNumber;
     @Override
     public String version() {
         return VersionUtil.version(this.getClass());    }
@@ -38,97 +44,115 @@ public class SalesSourceTask extends SourceTask {
         config = new MySourceConnectorConfig(map);
         odooApIHttpClient = new OdooApIHttpClient(config);
         odooApIHttpClient.login(config.getOwnerConfig(), config.getAuthDatabaseConfig(), config.getAuthUsernameConfig(),config.getAuthPasswordConfig());
+        initializeLastVariables();
         System.out.println("You reached here too");
+    }
+
+    public void initializeLastVariables(){
+        System.out.println("\n\n\n\nit entered the initialized last variable");
+        Map<String, Object> lastSourceOffset = null;
+        lastSourceOffset = context.offsetStorageReader().offset(sourcePartition());
+        if (lastSourceOffset == null){
+            nextQuerySince = config.getSince();
+            System.out.println("\n\n\nhere is next query since now "+nextQuerySince);
+            lastIdNumber = 1;
+        }else{
+            Object updatedAt = lastSourceOffset.get(log);
+            Object idNumber = lastSourceOffset.get(SALE_ID);
+            System.out.println("\n\n\n\nhere is next id value "+updatedAt + "and it" + idNumber);
+        }
     }
 
     @Override
     public List<SourceRecord> poll() throws InterruptedException {
         final ArrayList<SourceRecord> records = new ArrayList<>();
+        int x = 0;
 
-        Object object = odooApIHttpClient.executeMethod( "sale.order.line","search_read",asList(asList(
+        Object saleOrderLineObject = odooApIHttpClient.executeMethod( "sale.order.line","search_read",asList(asList(
                 asList("price_unit",">",0))),
                 new HashMap() {{
                     put("fields", asList("product_id","order_id","name", "price_total","price_unit","create_date", "write_date"));
 
                 }});
-        Object object2 = odooApIHttpClient.executeMethod( "sale.order","search_read",asList(asList(
+        Object saleOrderObject = odooApIHttpClient.executeMethod( "sale.order","search_read",asList(asList(
                 asList("require_payment", "=", "true"))),
                 new HashMap() {{
                     put("fields", asList("amount_tax", "amount_total", "amount_untaxed", "company_id", "confirmation_date", "partner_id", "invoice_status"));
 
                 }});
 
-        String json = JSON.toJSONString(object);
-        String json2 = JSON.toJSONString(object2);
-
-        JSONArray json3 = new JSONArray(json);
-        JSONArray json4 = new JSONArray(json2);
-
-int a= 0, b=0;
+        String saleOderLineString = JSON.toJSONString(saleOrderLineObject);
+        String saleOrderString = JSON.toJSONString(saleOrderObject);
 
 
-        for (int i=0; i<json3.length(); i++){
+        JSONArray saleOrderLineArray = new JSONArray(saleOderLineString);
+        JSONArray saleOrderArray = new JSONArray(saleOrderString);
 
-            json3.optJSONObject(i).remove("id");
+        for (int i=0; i<saleOrderLineArray.length(); i++){
 
-            for (int k = 0; k<json4.length(); k++) {
+            for (int k = 0; k<saleOrderArray.length(); k++) {
 
-                json3.optJSONObject(k).remove("id");
+                if (saleOrderLineArray.getJSONObject(i).getJSONArray("order_id").get(0) == saleOrderArray.optJSONObject(k).get("id")){
 
-                if (json3.getJSONObject(i).getJSONArray("order_id").get(0) == json4.optJSONObject(k).get("id")){
-
-                    for (int j = 0; j<json4.optJSONObject(k).length(); j++){
+                    for (int j = 0; j<saleOrderArray.optJSONObject(k).length(); j++){
 
                         try {
-                                json3.getJSONObject(i).put((String) json4.optJSONObject(k).names().opt(j), json4.optJSONObject(k).get((String) json4.optJSONObject(k).names().opt(j)));
+                            saleOrderLineArray.getJSONObject(i).put((String) saleOrderArray.optJSONObject(k).names().opt(j), saleOrderArray.optJSONObject(k).get((String) saleOrderArray.optJSONObject(k).names().opt(j)));
 
-                            }catch (JSONException e){
-                                e.printStackTrace();
-                            }
+                        }catch (JSONException e){
+                            e.printStackTrace();
+                        }
 
                     }
-                    a++;
-
                 }
             }
 
         }
 
-        for (int k=0; k<json3.length(); k++) {
+        for (int k=0; k<saleOrderLineArray.length(); k++) {
 
-            json3.getJSONObject(k).put("product_name", json3.getJSONObject(k).getJSONArray("product_id").get(1));
-            json3.getJSONObject(k).put("partner_name", json3.getJSONObject(k).getJSONArray("partner_id").get(1));
-            json3.getJSONObject(k).put("company_name", json3.getJSONObject(k).getJSONArray("company_id").get(1));
-            json3.getJSONObject(k).put("product_id", json3.getJSONObject(k).getJSONArray("product_id").get(0));
-            json3.getJSONObject(k).put("partner_id", json3.getJSONObject(k).getJSONArray("partner_id").get(0));
-            json3.getJSONObject(k).put("company_id", json3.getJSONObject(k).getJSONArray("company_id").get(0));
-            json3.getJSONObject(k).put("confirmation_date", json3.getJSONObject(k).get("confirmation_date").toString());
+            saleOrderLineArray.getJSONObject(k).put("sale_id", saleOrderLineArray.getJSONObject(k).get("id"));
+
+            saleOrderLineArray.getJSONObject(k).put("product_name", saleOrderLineArray.getJSONObject(k).getJSONArray("product_id").get(1));
+            saleOrderLineArray.getJSONObject(k).put("partner_name", saleOrderLineArray.getJSONObject(k).getJSONArray("partner_id").get(1));
+            saleOrderLineArray.getJSONObject(k).put("company_name", saleOrderLineArray.getJSONObject(k).getJSONArray("company_id").get(1));
+            saleOrderLineArray.getJSONObject(k).put("product_id", saleOrderLineArray.getJSONObject(k).getJSONArray("product_id").get(0));
+            saleOrderLineArray.getJSONObject(k).put("partner_id", saleOrderLineArray.getJSONObject(k).getJSONArray("partner_id").get(0));
+            saleOrderLineArray.getJSONObject(k).put("company_id", saleOrderLineArray.getJSONObject(k).getJSONArray("company_id").get(0));
+            saleOrderLineArray.getJSONObject(k).put("confirmation_date", saleOrderLineArray.getJSONObject(k).get("confirmation_date").toString());
+
+            saleOrderLineArray.optJSONObject(k).remove("id");
+            saleOrderLineArray.optJSONObject(k).remove("order_id");
 
         }
 
-        System.out.println("Clean data boy, see it------------"+json3);
-        System.out.println("One record from clean data----:)" + json3.optJSONObject(0));
+        System.out.println("\n\nClean data boy, see it------------"+saleOrderLineArray);
+
+        lastIdNumber = saleOrderLineArray.optJSONObject(saleOrderLineArray.length()-1).getInt("sale_id") ;
 
         SourceRecord sourceRecord = null;
 
-        for(Object obj: json3){
+        for(Object obj: saleOrderLineArray){
             SalesModel salesModel = SalesModel.fromJson((JSONObject) obj);
-            sourceRecord = generateSourceRecord(salesModel);
+             sourceRecord = generateSourceRecord(salesModel);
             records.add(sourceRecord);
+            x++;
         }
 
-        System.out.println("Here we go ++++++++++++++++++++++++++++++++ " + sourceRecord);
+        System.out.println("\n\n\nhere is the data" + sourceRecord);
 
+        if (x > 0) log.info(String.format("\n\n\nFetched %s record(s)", x));
 
         return records;
     }
 
+
     public SourceRecord generateSourceRecord(SalesModel sale) {
         return new SourceRecord(
                 sourcePartition(),
-                null,
+                sourceOffset(sale.getSale_id()),
                 config.getTopicConfig(),
-                0,
+                null,
                 Keyschema,
                 buildRecordKey(),
                 ValueSchema,
@@ -139,16 +163,31 @@ int a= 0, b=0;
     public void stop() {
 
     }
+
+    private Map<String,String>  sourcePartition() {
+        Map<String,String> map = new HashMap<>();
+        map.put(OWNER_URL_CONFIG,config.getOwnerConfig());
+        map.put(AUTH_USERNAME_CONFIG,config.getAuthUsernameConfig());
+
+        return map;
+    }
+    private Map<String, String> sourceOffset(Integer updatedAt) {
+        Map<String, String> map = new HashMap<>();
+
+        map.put(SALE_ID, lastIdNumber.toString());
+        return map;
+    }
+
     private Struct buildRecordKey() {
 //        Schema schema = null;
         Struct key = new Struct(Keyschema)
                 .put("tableName", "sale");
         return key;
     }
+
     private Struct buildRecordValue(SalesModel sale){
         Struct valueStruct = new Struct(ValueSchema)
                 .put(PRODUCT_ID,sale.getProduct_id())
-//                .put(ORDER_ID,sale.getOrder_id())
                 .put(NAME,sale.getName())
                 .put( PRICE_TOTAL, sale.getPrice_total())
                 .put( PRICE_UNIT, sale.getPrice_unit())
@@ -163,14 +202,8 @@ int a= 0, b=0;
                 .put( PARTNER_NAME,sale.getPartner_name())
                 .put( COMPANY_NAME,sale.getCompany_name())
                 .put( PRODUCT_NAME,sale.getProduct_name())
+                .put(SALE_ID, sale.getSale_id())
                 .put(INVOICE_STATUS,sale.getInvoice_status());
         return valueStruct;
-    }
-    private Map<String,String>  sourcePartition() {
-        Map<String,String> map = new HashMap<>();
-        map.put(OWNER_URL_CONFIG,config.getOwnerConfig());
-        map.put(AUTH_USERNAME_CONFIG,config.getAuthUsernameConfig());
-
-        return map;
     }
 }

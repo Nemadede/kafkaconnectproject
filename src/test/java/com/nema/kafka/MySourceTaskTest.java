@@ -46,10 +46,16 @@ public class MySourceTaskTest {
 
     @Test
     public void test8() throws InterruptedException {
-        salesSourceTask.config = new MySourceConnectorConfig(initialConfig());
-        salesSourceTask.start(initialConfig());
-        List pull =  salesSourceTask.poll();
-        System.out.println(pull);
+//        salesSourceTask.config = new MySourceConnectorConfig(initialConfig());
+//        salesSourceTask.lastIdNumber= 1;
+//        salesSourceTask.nextQuerySince = Instant.parse("2017-01-01T00:00:00Z");
+
+
+//        salesSourceTask.start(initialConfig());
+//        List pull =  salesSourceTask.poll();
+//        System.out.println(pull);
+        System.out.println("here is test 8---------------------");
+//        salesSourceTask.initializeLastVariables();
 
     }
 
